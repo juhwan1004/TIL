@@ -4,7 +4,11 @@
 
 - speaker: **방진호**, **임동우** (삼성전자) 
 
-**[ Service worker ]**:
+**[ Service worker ]**: Event based worker이고, 특정 event를 수신하는 deamon
+
+- Document와 별개의 생명 주기를 가지며 심지어 브라우저가 죽어도 살아있음.
+- 제공하는 site에 의해 **브라우저에 설치(install)**되고, **필요한 경우**(예: 푸쉬 알람) 이벤트를 수신 받은 **브라우저에 의해 활성화(activate)** 됨.
+- 지정된 origin 및 scope에서만 동작하며, Secure Context에서 실행됨을 보장.
 
 
 
