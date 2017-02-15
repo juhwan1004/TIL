@@ -1,12 +1,13 @@
 [HTML] Table 작성 시 고려 사항				
 
 # Table 작성  
+Tip. e-mail 작성 시(e.g. g-mail) 제대로된 CSS를 지원 못하므로 table을 사용하여 form 형식을 만들어 보내주는 것이 좋다.
 
 ##  1. <caption> 태그 작성 (필수)  
 
 table 작성 시 제목 역할을 하는 caption을 반드시 써주자 !!!   
 
-**1.1 간단한 테이블 (one header)의 경우 **  
+**1.1 간단한 테이블 (one header)의 경우**  
 
 table에 대한 설명(summary) 생략가능 
 
@@ -153,4 +154,4 @@ Delivery slots:
   	</tr>
 </td>
 ```
-
+**참고:** [w3g](https://www.w3.org/WAI/tutorials/tables/)
