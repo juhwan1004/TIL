@@ -51,7 +51,8 @@ console.log(h1_link.firstChild.nodeValue.nodeType);
 
 .firstChild.nodeValue.nodeType의 경우 "FAST CAMPUS"라는 요소노드의 문자열 값을 반환하는데 문자열의 경우 nodeType이 없으므로 undefined를 반환한다.
 
- ![nodeType_img2](C:\Users\JuHwan\Desktop\nodeType_img2.png)
+![nodetype_img2](https://cloud.githubusercontent.com/assets/13896252/23104222/d1135b38-f70c-11e6-97f7-dbc68d23d1ca.png)
+
 
 
 
