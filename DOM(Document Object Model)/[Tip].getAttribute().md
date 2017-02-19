@@ -10,4 +10,4 @@ Node.id | className | title과 같은 예전 방식으로는 **custom속성(data
 
 `.getAttribute('data- | aria label')`은 지정한 상대경로를 제대로 반환해준다.
 
-![nodetype_img1](C:\Users\JuHwan\Desktop\nodetype_img1.png)
+![nodetype_img1](https://cloud.githubusercontent.com/assets/13896252/23104220/ccecda8e-f70c-11e6-90f2-2a3436ad71ee.png)
