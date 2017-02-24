@@ -51,6 +51,18 @@
 
 `rm -rf 디렉토리이름`
 
+## github 공유
+
+- 설치 된 디렉토리에서 `git init` 명령어로 관리를 시작하고
+- `vi .gitignore`: vim 편집기로 .gitignore 파일에 git으로 관리하지 않을 파일명 작성 후 저장. (e.g. node_modules) 
+- package.json 파일만 잘 관리해주면 된다.
+
+## 팀원과 공유
+
+- npm이 설치된 팀원에게 package.jason 파일을 보내주고
+- github에 있는 doc을 팀원이 fork 한 후 해당 디렉토리에서 `npm i`명령어로  node_modules 설치하면 끝!
+- package.json에서 내가 설정한 단축 명령어 사용가능
+
 
 
 
