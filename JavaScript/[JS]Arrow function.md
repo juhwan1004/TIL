@@ -1,3 +1,24 @@
+# Arrow Function
+
+-  함수 표현식에서만 사용이 가능하다.
+
+```javascript
+document.body.me = function() {
+  console.log(this);
+  document.onclick = function {
+    console.log(this); // this === document
+  }
+
+document.body.me = function() {
+  console.log(this);
+  document.onclick = ()=> {
+    console.log(this); // this === body
+  }
+}
+```
+
+---
+
 화살표 함수 식(**arrow function expression**)은 [function 식](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/function)에 비해 구문이 짧고 (자신의 [this](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/this),[arguments](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/arguments), [super](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/super) 또는 [new.target](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/new.target)을 바인딩 하지 않는) [this](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/this) 값을 렉시컬(lexically, 정적) 바인딩 합니다. 화살표 함수는 항상 [익명](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/name)입니다.
 
 ## 구문
