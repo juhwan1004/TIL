@@ -1,8 +1,13 @@
 # Arrow Function
 
--  함수 표현식에서만 사용이 가능하다.
+특징
+
+- 함수 표현식에서만 사용이 가능하다.
+- 1개의 매개변수만 전달할 경우 매개변수를 감싸는 괄호 생략가능
+- 함수를 한 줄로 작성할 경우 return 키워드, 중괄호 생략이 가능하다.
 
 ```javascript
+// ex1
 document.body.me = function() {
   console.log(this);
   document.onclick = function {
@@ -15,6 +20,24 @@ document.body.me = function() {
     console.log(this); // this === body
   }
 }
+```
+
+```javascript
+// ex2
+// 1
+(function(){
+  'use strict';
+  console.log(this);
+})(); // this === undefined
+// 2
+(function(){
+  console.log(this);
+})(); // this === window
+// 3
+(()=>{
+  'use strict';
+  console.log(this);
+})(); // this === window
 ```
 
 ---
