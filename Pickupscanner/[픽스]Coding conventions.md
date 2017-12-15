@@ -387,3 +387,126 @@ const foo = '\'this\' \i\s \"quoted\"';
 const foo = '\'this\' is "quoted"';
 const foo = `my name is '${name}'`;
 ```
+## **7.Functions**
+### 7.1 Use named function expressions instead of function declarations. eslint: func-style jscs: disallowFunctionDeclarations
+Why? Function declarations are hoisted, which means that it’s easy - too easy - to reference the function before it is defined in the file. This harms readability and maintainability. If you find that a function’s definition is large or complex enough that it is interfering with understanding the rest of the file, then perhaps it’s time to extract it to its own module! Don’t forget to explicitly name the expression, regardless of whether or not the name is inferred from the containing variable (which is often the case in modern browsers or when using compilers such as Babel). This eliminates any assumptions made about the Error's call stack. 
+```js
+// bad
+function foo() {
+  // ...
+}
+
+// bad
+const foo = function () {
+  // ...
+};
+
+// good
+// lexical name distinguished from the variable-referenced invocation(s)
+const short = function longUniqueMoreDescriptiveLexicalFoo() {
+  // ...
+};
+```
+### 7.2 Wrap immediately invoked function expressions in parentheses. eslint: wrap-iife jscs: requireParenthesesAroundIIFE
+Why? An immediately invoked function expression is a single unit - wrapping both it, and its invocation parens, in parens, cleanly expresses this. Note that in a world with modules everywhere, you almost never need an IIFE.
+```js
+// immediately-invoked function expression (IIFE)
+(function () {
+  console.log('Welcome to the Internet. Please follow me.');
+}());
+```
+### 7.4 Note: ECMA-262 defines a block as a list of statements. A function declaration is not a statement.
+```js
+// bad
+if (currentUser) {
+  function test() {
+    console.log('Nope.');
+  }
+}
+
+// good
+let test;
+if (currentUser) {
+  test = () => {
+    console.log('Yup.');
+  };
+}
+```
+### 7.5 Never name a parameter arguments. This will take precedence over the arguments object that is given to every function scope.
+```js
+// bad
+function foo(name, options, arguments) {
+  // ...
+}
+
+// good
+function foo(name, options, args) {
+  // ...
+}
+```
+### 7.6 Never use arguments, opt to use rest syntax ... instead. eslint: prefer-rest-params
+Why? ... is explicit about which arguments you want pulled. Plus, rest arguments are a real Array, and not merely Array-like like arguments.
+```js
+// bad
+function concatenateAll() {
+  const args = Array.prototype.slice.call(arguments);
+  return args.join('');
+}
+
+// good
+function concatenateAll(...args) {
+  return args.join('');
+}
+```
+### 7.10 Never use the Function constructor to create a new function. eslint: no-new-func
+Why? Creating a function in this way evaluates a string similarly to eval(), which opens vulnerabilities.
+```js
+// bad
+var add = new Function('a', 'b', 'return a + b');
+
+// still bad
+var subtract = Function('a', 'b', 'return a - b');
+```
+### 7.11 Spacing in a function signature. eslint: space-before-function-paren space-before-blocks
+Why? Consistency is good, and you shouldn’t have to add or remove a space when adding or removing a name.
+```js
+// bad
+const f = function(){};
+const g = function (){};
+const h = function() {};
+
+// good
+const x = function () {};
+const y = function a() {};
+```
+### 7.15 Functions with multiline signatures, or invocations, should be indented just like every other multiline list in this guide: with each item on a line by itself, with a trailing comma on the last item.
+```js
+// bad
+function foo(bar,
+             baz,
+             quux) {
+  // ...
+}
+
+// good
+function foo(
+  bar,
+  baz,
+  quux,
+) {
+  // ...
+}
+
+// bad
+console.log(foo,
+  bar,
+  baz);
+
+// good
+console.log(
+  foo,
+  bar,
+  baz,
+);
+```
+## **8.Arrow Functions**
